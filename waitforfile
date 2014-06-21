@@ -1,5 +1,14 @@
 #!/bin/sh
 
+# Simple command that waits till a file is found and exits with exit status 0.
+# Used to sync command dependencies.
+# To be used so :
+#
+#     waitforfile .zeus.sock && zeus s
+#
+# The above command will wait till the file ".zeus.sock" is found and then
+# executes "zeus s" command
+
 # Exit if exactly one argument is not passed
 if [ $# != 1 ]; then
   exit 1
